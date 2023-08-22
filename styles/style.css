@@ -1,0 +1,326 @@
+@font-face {
+    font-family: GillRoy_Medium;
+    src: url(/assets/Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: GillRoy_Light;
+    src: url(/assets/Gilroy-Light.otf);
+}
+
+@font-face {
+    font-family: GillRoy_SemiBold;
+    src: url(/assets/Gilroy-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Mazius;
+    src: url(/assets/Mazius-Extraitalic.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: GillRoy_Light;    
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#main {
+    width: 100%;
+}
+
+.base {
+    height: 100vh;
+    width: 100vw;
+    background-color: #151515;
+    color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topheading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.topheading h1 {
+    font-size: 0.9rem;
+    font-weight: 100;
+
+}
+
+.topheading h5 {
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.middle h1 {
+    font-size: 2.7rem;
+    font-weight: 100;
+}
+
+
+#surname {
+    font-family: Mazius;
+    color: #14cf93;
+}
+
+
+@media (max-width: 600px) {
+    .middle h1{
+        font-size: 1.5rem;
+    }
+}
+
+.end{
+    padding-bottom: 1rem;
+}
+
+.reveal .parent{
+    display: block;
+    overflow: hidden;
+}
+
+.reveal .parent .child{
+    display: block;
+}
+
+.child span{
+    display: inline-block;
+}
+
+.layer1 {
+    position: absolute;
+    bottom: 0;
+    height: 0vh;
+    width: 100vw;
+    background-color: #14cf93;
+}
+
+.layer2 {
+    position: absolute;
+    bottom: 0;
+    height: 0vh;
+    width: 100vw;
+    background-color: #fcfaf8;
+}
+
+.home{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fcfaf8;
+}
+
+.home .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    
+}
+
+.home .nav a{
+    color: #161616;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 800px) {
+    .home .nav_mobile {
+        display: none;
+        
+    }
+}
+
+@media (max-width: 800px) {
+    .home .nav_full {
+        display: none;     
+    }
+    .home .nav_mobile {
+        padding: 2rem;  
+    }
+}
+
+.container1{
+    overflow: hidden;
+}
+
+.container2{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 4vw;
+    padding-top: 1rem;
+}
+
+.hero_text .first{
+    line-height: 15vw;
+    margin-top: 1.5rem;
+    margin-left: 4rem;
+    font-size: 13vw;
+    font-family: GillRoy_Medium;
+    letter-spacing: -0.2rem;
+    color: #383838;
+}
+.hero_text .second{
+    line-height: 8vw;
+    margin-left: 20vw;
+    font-size: 13vw;
+    letter-spacing: -0.2rem;
+    color: #383838;
+    display: flex;
+}
+
+.hero_text .second .text{
+    font-family: GillRoy_Medium;
+}
+
+.second svg{
+    height: 8vw;
+}
+
+@media (max-width: 500px) {
+    .hero_text .first{
+        margin-top: 1.5rem;
+        margin-left: 2rem;
+        font-size: 20vw;
+        font-family: GillRoy_Medium;
+        letter-spacing: -0.2rem;
+        color: #383838;
+    }
+    .hero_text .second{
+        line-height: 18vw;
+        margin-left: 2rem;
+        font-size: 20vw;
+        font-family: GillRoy_Medium;
+        letter-spacing: -0.2rem;
+        color: #383838;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .second svg{
+        height: 18vw;
+    }
+}
+
+#Visual path, #Visual polyline {
+    stroke: #14cf93;
+}
+
+.intro{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fcfaf8;
+}
+
+.intro .left{
+    width: 45vw;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.intro .right{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media (max-width: 700px) {
+    .intro{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .intro .left{
+        width: 100vw;
+        height: fit-content;
+    }
+    
+    .intro .right{
+        width: 100vw;
+        height: fit-content;
+    }
+
+    .pf{
+        height: 20rem;
+    }
+
+    .intro .left .content{
+        padding: 1rem;
+        font-size: 0.7rem;   
+    }
+
+
+    
+}
+
+@media (min-width: 700px) {
+    .intro .left .content{
+        padding-left: 5rem;    
+    }
+}
+
+.intro .left .content{
+    font-family: GillRoy_Light;
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: #161616;
+    
+}
+
+.pf{
+    z-index: 2;
+    height: 25rem;
+    border-radius: 1rem;
+    transform: rotate(-25deg) translate(-8rem,-10rem);
+}
+
+.content span{
+    font-family: Mazius;
+    color: #14cf93;
+    font-size: large;
+}
+
+
+
+.projects{
+    height: 100vh;
+}
+
+
+
+
+
+
+
+
+.loader{
+    z-index: 20;
+    position: absolute;
+    /* display: none; */
+}
