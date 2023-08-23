@@ -225,6 +225,7 @@ body{
 
 .intro{
     height: 100%;
+    padding-bottom: 4rem;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -240,6 +241,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: justify;
+    overflow: hidden;
 }
 
 .intro .right{
@@ -298,6 +300,12 @@ body{
     height: 25rem;
     border-radius: 1rem;
     transform: rotate(-25deg) translate(-8rem,-10rem);
+    filter: saturate(0);
+}
+
+.pf:hover{
+    filter: saturate(1);
+    transition: 0.1s;
 }
 
 .content span{
@@ -308,10 +316,173 @@ body{
 
 
 
-.projects{
-    height: 100vh;
+.skills::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    transform: rotate(-180deg) translateY(40%);
+    background-image: url(https://abhishekjha.me/rip.f6d7c4dd.svg);
+    
 }
 
+.skills{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    background-color: #f2f2f2;
+}
+
+.skills .arrow{
+    display: block;
+}
+
+.skills .arrow svg{
+    stroke: #a0a0a0;
+    height: 100px;
+    position: relative;
+    padding: 2rem 3rem;
+}
+
+.skills .tools{
+    padding: 0rem 3rem;
+    font-size: 8vw;
+    font-family: GillRoy_Medium;
+    color: #383838;
+}
+
+.skills .tools span{
+    font-family: Mazius;
+    color: #14cf93;
+}
+
+.skilldiv{
+    display: block;
+    font-family: Mazius;
+    color: #14cf93;
+    font-size: 2rem;
+}
+
+.skilldiv{
+    padding-left: 3rem;
+}
+
+@media (min-width: 540px){
+    .skills .tools{
+        font-size: 6vw;
+    }
+    .skilldiv{
+        font-size: 3rem;
+    }
+}
+
+.hr_design{
+    margin: 1rem 3rem;
+}
+
+.skills_main{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.skillset{
+    height: 11rem;
+    width: 10rem;
+    background-color: #e7e7e7;
+    border-radius: 1rem;
+}
+
+.skillset img{
+    padding: 0rem 0.5rem;
+    padding-top: 1rem;
+}
+
+.skillset h1{
+    color: #161616;
+    font-size: 1.0rem;
+    padding: 0.2rem 0.5rem;
+
+}
+
+.skillset .skill_desc{
+    color: #4e4e4e;
+    font-family: GillRoy_Light;
+    font-size: 0.8rem;
+    padding: 0rem 0.5rem;
+}
+
+.bg{
+    position: relative;
+    height: 8rem;
+    width: 8rem;
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    filter: blur(1.5rem);
+}
+
+.icon{
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.works{
+    padding-top: 16rem;
+    height: 100vh;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.works .heading{
+    display: flex;
+    flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     padding-left: 3rem;
+}
+
+.works .heading .feat{
+    font-size: 8vw;
+    color: #383838;
+    font-family: GillRoy_Medium;
+}
+
+.works .heading .feat span{
+    font-size: 8vw;
+    color: #14cf93;
+    font-family: Mazius;
+}
+
+.works .heading svg{
+    transform: rotate(-270deg);
+    stroke: #a0a0a0;
+    height: 100px;
+    margin-right: 10rem;
+    position: relative;
+    padding: 2rem 3rem;
+}
+
+@media (min-width: 540px){
+    .works .heading .feat{
+        font-size: 6vw;
+    }
+    
+    .works .heading .feat span{
+        font-size: 6vw;
+
+    }
+}
 
 
 
@@ -321,6 +492,6 @@ body{
 
 .loader{
     z-index: 20;
-    position: absolute;
+    position: fixed;
     /* display: none; */
 }
