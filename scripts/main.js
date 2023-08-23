@@ -1,6 +1,14 @@
+
+function disableScroll() {
+    window.onscroll = function() {
+        window.scrollTo(0,0);
+    };
+}
+
+disableScroll()
+
 function loader() {
     var t1 = gsap.timeline();
-
     t1.to(".base", {
         delay: 1.8,
         height: "0vh",
@@ -23,6 +31,12 @@ function loader() {
         }
     })
 }
+
+      
+    function enableScroll() {
+        window.onscroll = function() {};
+    }
+
 
 function revealText() {
     document.querySelectorAll(".reveal")
@@ -95,22 +109,49 @@ function animateHome() {
         onComplete: function(){
             gsap.set(".second svg", {opacity: 100 });
             animateSVG();
+            enableScroll();
         }
 
     })
 
 }
 
+gsap.set(".intro .left .content", { y: "-200%", opacity: 0 });
 
 gsap.to(".pf",{
     transform: "rotate(0) translate(0,0)",
+    ease: "sine.in",
     scrollTrigger:{
         trigger: ".intro",
         scrub:1,
         end: "top 10%"
     }
 })
+gsap.to(".intro .left .content",{
+    transform: "translate(0,0)",
+    opacity: 1,
+    ease: "sine.in",
+    scrollTrigger:{
+        trigger: ".intro",
+        scrub:1,
+        end: "top 30%"
+    }
+})
 
+gsap.set(".skillset", { x: "-200%", opacity: 0, transform: "rotate(-10deg)", });
+
+gsap.to(".skillset",{
+    x: 0,
+    opacity: 1,
+    stagger: 0.2,
+    delay: 1,
+    scrollTrigger:{
+        trigger: ".skills_main",
+        scroller: "body",
+        scrub:1,
+        end: "top 1%"
+    }
+})
 
 loader()
 revealText();
