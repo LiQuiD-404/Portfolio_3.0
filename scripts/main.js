@@ -1,11 +1,24 @@
+gsap.registerPlugin(ScrollTrigger);
 
-function disableScroll() {
-    window.onscroll = function() {
-        window.scrollTo(0,0);
-    };
-}
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("#main"),
+  smooth: true
+});
 
-disableScroll()
+locoScroll.on("scroll", ScrollTrigger.update);
+ScrollTrigger.scrollerProxy("#main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
 
 function loader() {
     var t1 = gsap.timeline();
@@ -31,11 +44,6 @@ function loader() {
         }
     })
 }
-
-      
-    function enableScroll() {
-        window.onscroll = function() {};
-    }
 
 
 function revealText() {
@@ -123,6 +131,7 @@ gsap.to(".pf",{
     ease: "sine.in",
     scrollTrigger:{
         trigger: ".intro",
+        scroller: "#main",
         scrub:1,
         end: "top 10%"
     }
@@ -133,6 +142,7 @@ gsap.to(".intro .left .content",{
     ease: "sine.in",
     scrollTrigger:{
         trigger: ".intro",
+        scroller: "#main",
         scrub:1,
         end: "top 30%"
     }
@@ -147,12 +157,34 @@ gsap.to(".skillset",{
     delay: 1,
     scrollTrigger:{
         trigger: ".skills_main",
-        scroller: "body",
+        scroller: "#main",
         scrub:1,
         end: "top 1%"
     }
 })
 
-loader()
+document.querySelectorAll(".img1").forEach(function (elem) {
+    elem.addEventListener("mousemove", function (dets) {
+        var element = dets.target
+        document.querySelector(".works").style.backgroundColor = "#94c0cc";
+        elem.addEventListener("mouseleave", function () {
+            document.querySelector(".works").style.backgroundColor = "#f2f2f2";
+        })
+    })
+
+
+})
+document.querySelectorAll(".img2").forEach(function (elem) {
+    elem.addEventListener("mousemove", function (dets) {
+        var element = dets.target
+        document.querySelector(".works").style.backgroundColor = "#ff99a8";
+    })
+    elem.addEventListener("mouseleave", function () {
+        document.querySelector(".works").style.backgroundColor = "#f2f2f2";
+    })
+
+})
+
+loader();
 revealText();
 

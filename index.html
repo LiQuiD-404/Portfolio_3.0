@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Singh - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -32,7 +33,7 @@
         <div class="home">
             <div class="nav nav_full">
                 <a href="#">Shubham Singh</a>
-                <a href="#">Projects</a>
+                <a href="#works">Projects</a>
                 <a href="#">Socials</a>
                 <a href="#">Contact</a>
             </div>
@@ -258,18 +259,43 @@
                 </div>
             </div>
         </div>
-
-        <div class="works">
+        <div id="works" class="works">
             <div class="heading">
                 <div class="feat">Feat Wo<span>r</span>ks</div>
                 <div class="arrow_down">
                     <svg class="o-ui-arrow" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.10162 3.10156L62.9999 62.9999" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M63 1.00001L63 63L0.999989 63" stroke-linecap="round" stroke-linejoin="round"></path> </svg>
                 </div>
             </div>
+            <div class="container">
+                <div class="imgcntr">
+                    <div id="overcastimg" class="img1">
+                        <img data-index="0" data-scroll data-scroll-speed="-1.5" src="assets/projects/overcast.jpg" alt="">
+                        <div class="projdesc">
+                            <button>OverCast - Weather App</button>
+                        </div>
+                        
+                    </div>
+                    <div id="lumosimg" class="img2">
+                        <img data-index="1" data-scroll data-scroll-speed="-2.5" src="https://images.unsplash.com/photo-1632516643720-e7f5d7d6ecc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=411&q=80" alt="">
+                        <div class="projdesc">
+                            <button>Lumos - Gradient Generator</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="imgcntr imgspecial">
+                    <div id="portfolioimg" class="img1">
+                        <img data-index="2" data-scroll data-scroll-speed="-1.5" src="assets/projects/portfolio.png" alt="">
+                        <div class="projdesc">
+                            <button>Personal Portfolio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
+        <div class="sep works"></div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
         integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -277,6 +303,7 @@
         integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts/main.js"></script>
+
 </body>
 
 </html>
