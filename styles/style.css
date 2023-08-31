@@ -24,11 +24,17 @@
     font-family: GillRoy_Light;    
 }
 
+html, body {
+    width: 100vw;
+    height: 100vh;
+ }
+
 body{
     overflow-x: hidden;
 }
 
 #main {
+    position: absolute;
     width: 100%;
 }
 
@@ -441,7 +447,7 @@ body{
 .works{
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
     padding-top: 16rem;
-    height: 100vh;
+    height: fit-content;
     width: 100%;
     background-color: #f2f2f2;
 }
@@ -487,16 +493,16 @@ body{
 }
 
 .works{
+    position: relative;
     height: fit-content;
 }
 
 .imgcntr{
-    margin: 0rem 8rem;
     margin-top: 5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 
@@ -539,7 +545,7 @@ body{
 }
 
 
-@media (max-width: 1200px){
+@media (max-width: 500px){
     .imgcntr{
         margin: 0rem 2rem;
         display: flex;
@@ -582,6 +588,7 @@ body{
     position: absolute;
     bottom: 0;
     height: 20%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -593,6 +600,8 @@ body{
     border: none;
     cursor: pointer;
 }
+
+
 
 
 @media (max-width: 540px){
@@ -607,11 +616,108 @@ body{
     }
 }
 
+@media (max-width: 400px){
+    .projdesc button{
+        margin: 5rem 3rem;
+        padding: 1rem 3rem;
+        border-radius: 4rem;
+        font-size: 0.5rem;
+        font-family: GillRoy_Medium;
+        border: none;
+        cursor: pointer;
+    }
+}
 
 .sep{
-    height: 100vh;
-    background-color: #f2f2f2;
+    height: 25vh;
+    width: 100vw;
+    position: relative;
 }
+
+.end_works{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    transform: translateY(40%);
+    background-image: url(https://abhishekjha.me/rip.f6d7c4dd.svg);
+}
+
+
+
+.socials{
+    background-color: #fcfaf8;
+    height: 100vh;
+    width: 100vw;
+}
+
+.socials .heading{
+    padding-top: 5rem;
+    display: block;
+    padding-left: 3rem;
+}
+
+
+.socials .heading .social_title{
+    font-size: 8vw;
+    color: #383838;
+    font-family: GillRoy_Medium;
+}
+
+.socials .heading .social_title span{
+    font-size: 8vw;
+    color: #14cf93;
+    font-family: Mazius;
+}
+
+.socials .heading svg{
+    stroke: #a0a0a0;
+    height: 100px;
+    margin-right: 10rem;
+    position: relative;
+    padding: 2rem 3rem;
+}
+
+
+@media (min-width: 540px){
+    .socials .heading .social_title{
+        font-size: 6vw;
+    }
+    
+    .socials .heading .social_title span{
+        font-size: 6vw;
+
+    }
+}
+
+.social_container{
+    gap: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card a{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out;
+}
+
+.card a:hover{
+    background-color: #c7c6c6;
+}
+
+.card img{
+    height: 80%;
+}
+
 
 
 .loader{
