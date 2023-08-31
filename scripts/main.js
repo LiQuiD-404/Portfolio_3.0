@@ -217,6 +217,17 @@ gsap.to(".social_container .card", {
     }
 })
 
+gsap.set(".bg_contact", { scale: 1});
+
+gsap.to(".bg_contact", {
+    scale: 10,
+    scrollTrigger:{
+        trigger: ".contact",
+        scroller: "#main",
+        scrub:1
+    }
+})
+
 loader();
 revealText();
 
