@@ -228,6 +228,21 @@ gsap.to(".bg_contact", {
     }
 })
 
+gsap.set(".workcontainer", {scale: 0, opacity:0});
+
+gsap.to(".workcontainer", {
+    scale: 1,
+    opacity: 1,
+    stagger: 0.3,
+    duration : 1,
+    scrollTrigger:{
+        trigger: ".workmain",
+        scroller: "#main",
+
+    }
+})
+
+
 loader();
 revealText();
 
