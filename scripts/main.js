@@ -203,6 +203,9 @@ document.getElementById('lumos').addEventListener('click', function () {
 document.getElementById('portfolio').addEventListener('click', function () {
     window.open("https://shubbhh.vercel.app/", "_blank")
 })
+document.getElementById('reflex').addEventListener('click', function () {
+    window.open("https://reflexaimtrainer.vercel.app/", "_blank")
+})
 
 gsap.set(".social_container .card", { y: "-100%", opacity: 0, transform: "rotate(150deg)" });
 
