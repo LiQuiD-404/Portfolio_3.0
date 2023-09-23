@@ -409,7 +409,8 @@ body {
 .skillset {
     height: 11rem;
     width: 10rem;
-    background-color: #e7e7e7;
+    border: 2px solid#e7e7e7;
+    background-color:#fafafa;
     border-radius: 1rem;
 }
 
@@ -929,5 +930,5 @@ html.has-scroll-smooth {
 .loader {
     z-index: 20;
     position: fixed;
-    /* display: none; */
+    display: none;
 }
