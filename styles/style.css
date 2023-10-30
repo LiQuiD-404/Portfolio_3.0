@@ -859,6 +859,28 @@ body {
     
 }
 
+.workcontainer:nth-child(1){
+    height: 18rem;
+    width: 18rem;
+    background-color: #e7e7e7;
+    border-radius: 2rem;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+    
+}
+
+.workcontainer:nth-child(3){
+    height: 18rem;
+    width: 18rem;
+    background-color: #e7e7e7;
+    border-radius: 2rem;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+    
+}
+
+
+
 @media (max-width: 440px) {
     .workcontainer{
         height: fit-content;

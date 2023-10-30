@@ -87,6 +87,18 @@ function revealText() {
 
 }
 
+function getHexColor() {
+    // Generate a random number between 192 and 255 for the R, G, and B components
+    const red = Math.floor(Math.random() * 64 + 192); // 192 to 255
+    const green = Math.floor(Math.random() * 64 + 192); // 192 to 255
+    const blue = Math.floor(Math.random() * 64 + 192); // 192 to 255
+  
+    // Convert the RGB values to a hex color
+    const hexColor = `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
+    
+    return hexColor;
+  }
+
 gsap.set(".nav a", { y: "-200%", opacity: 0 });
 gsap.set(".first", { y: 300, opacity: 0 });
 gsap.set(".second .text", { y: 300, opacity: 0 });
@@ -170,10 +182,13 @@ gsap.to(".skillset", {
     }
 })
 
+var color = "";
+
 document.querySelectorAll(".img1").forEach(function (elem) {
+    let color = getHexColor();
     elem.addEventListener("mousemove", function (dets) {
         var element = dets.target
-        document.querySelector(".works").style.backgroundColor = "#94c0cc";
+        document.querySelector(".works").style.backgroundColor = color;
         elem.addEventListener("mouseleave", function () {
             document.querySelector(".works").style.backgroundColor = "#f2f2f2";
         })
@@ -182,9 +197,10 @@ document.querySelectorAll(".img1").forEach(function (elem) {
 
 })
 document.querySelectorAll(".img2").forEach(function (elem) {
+    let color = getHexColor();
     elem.addEventListener("mousemove", function (dets) {
         var element = dets.target
-        document.querySelector(".works").style.backgroundColor = "#ff99a8";
+        document.querySelector(".works").style.backgroundColor = color;
     })
     elem.addEventListener("mouseleave", function () {
         document.querySelector(".works").style.backgroundColor = "#f2f2f2";
