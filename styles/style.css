@@ -412,6 +412,7 @@ body {
     border: 2px solid#e7e7e7;
     background-color:#fafafa;
     border-radius: 1rem;
+    box-shadow: 1px 5px rgba(230, 231, 231, 0.5);
 }
 
 .skillset img {
@@ -856,7 +857,6 @@ body {
     border-radius: 2rem;
     padding: 1rem 1rem;
     font-size: 0.9rem;
-    
 }
 
 .workcontainer:nth-child(1){
