@@ -3,22 +3,22 @@ gsap.registerPlugin(ScrollTrigger);
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 
 const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smooth: true
+    el: document.querySelector("#main"),
+    smooth: true
 });
 // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
 locoScroll.on("scroll", ScrollTrigger.update);
 
 // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
 ScrollTrigger.scrollerProxy("#main", {
-  scrollTop(value) {
-    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-  getBoundingClientRect() {
-    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-  },
-  // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-  pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+    scrollTop(value) {
+        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
 });
 
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
@@ -92,29 +92,29 @@ function getHexColor() {
     const red = Math.floor(Math.random() * 64 + 192); // 192 to 255
     const green = Math.floor(Math.random() * 64 + 192); // 192 to 255
     const blue = Math.floor(Math.random() * 64 + 192); // 192 to 255
-  
+
     // Convert the RGB values to a hex color
     const hexColor = `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
-    
+
     return hexColor;
-  }
+}
 
 gsap.set(".nav a", { y: "-200%", opacity: 0 });
 gsap.set(".first", { y: 300, opacity: 0 });
 gsap.set(".second .text", { y: 300, opacity: 0 });
-gsap.set(".second svg", {opacity: 0 });
+gsap.set(".second svg", { opacity: 0 });
 
-function animateSVG(){
-    document.querySelectorAll("#Visual>g").forEach(function(e){
+function animateSVG() {
+    document.querySelectorAll("#Visual>g").forEach(function (e) {
         var character = e.childNodes[1].childNodes[1];
 
         character.style.strokeDasharray = character.getTotalLength() + 'px';
         character.style.strokeDashoffset = character.getTotalLength() + 'px';
 
-        gsap.to("#Visual>g>g>path, #Visual>g>g>polyline",{
+        gsap.to("#Visual>g>g>path, #Visual>g>g>polyline", {
             strokeDashoffset: 0,
             duration: 1.3,
-            ease : Expo.easeInOut,
+            ease: Expo.easeInOut,
         })
     })
 }
@@ -127,15 +127,15 @@ function animateHome() {
         opacity: 100,
         duration: 0.5,
         delay: -0.1,
-        stagger : 0.2
+        stagger: 0.2
     })
-    t1.to(".first,.second .text",{
+    t1.to(".first,.second .text", {
         y: 0,
         opacity: 100,
         duration: 0.8,
         stagger: 0.5,
-        onComplete: function(){
-            gsap.set(".second svg", {opacity: 100 });
+        onComplete: function () {
+            gsap.set(".second svg", { opacity: 100 });
             animateSVG();
         }
 
@@ -233,36 +233,46 @@ gsap.to(".social_container .card", {
     transform: "rotate(0deg)",
     opacity: 1,
     stagger: 0.3,
-    scrollTrigger:{
+    scrollTrigger: {
         trigger: ".social_container",
         scroller: "#main"
     }
 })
 
-gsap.set(".bg_contact", { scale: 1});
+gsap.set(".bg_contact", { scale: 1 });
 
 gsap.to(".bg_contact", {
     scale: 10,
-    scrollTrigger:{
+    scrollTrigger: {
         trigger: ".contact",
         scroller: "#main",
-        scrub:1
+        scrub: 1
     }
 })
 
-gsap.set(".workcontainer", {scale: 0, opacity:0});
+gsap.set(".workcontainer", { scale: 0, opacity: 0 });
 
 gsap.to(".workcontainer", {
     scale: 1,
     opacity: 1,
     stagger: 0.3,
-    duration : 1,
-    scrollTrigger:{
+    duration: 1,
+    scrollTrigger: {
         trigger: ".workmain",
         scroller: "#main",
 
     }
 })
+
+gsap.to('.slider2 p', {
+    end: 'top 500px',
+    transform: "translate(-1800px,0)",
+    scrollTrigger: {
+        trigger: ".works",
+        scroller: "#main",
+        scrub: 1
+    }
+});
 
 
 loader();
