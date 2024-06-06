@@ -31,21 +31,21 @@ ScrollTrigger.refresh();
 function loader() {
     var t1 = gsap.timeline();
     t1.to(".base", {
-        delay: 1.8,
+        delay: 1.7,
         height: "0vh",
-        duration: 1.5,
+        duration: 1.6,
         ease: Expo.easeInOut
     })
     t1.to(".layer1", {
         height: "100vh",
-        duration: 1.5,
-        delay: -1.5,
+        duration: 1.7,
+        delay: -1.6,
         ease: Expo.easeInOut
     })
     t1.to(".layer2", {
         height: "100vh",
         duration: 1.5,
-        delay: -1.0,
+        delay: -0.5,
         ease: Expo.easeInOut,
         onComplete: function () {
             animateHome()
