@@ -1087,7 +1087,6 @@ body {
     }
 }
 
-/* 
 .achievement {
     position: relative;
     height: fit-content;
@@ -1111,8 +1110,6 @@ body {
     padding-top: 1rem;
 }
 
-
- */
 
 
 
@@ -1145,7 +1142,6 @@ html.has-scroll-smooth {
     --thickness: 5px;
 }
 
-/* 
 .content p {
     font-size: 1.4rem;
     display: inline;
@@ -1174,12 +1170,12 @@ html.has-scroll-smooth {
 .v3:hover p {
     color: black;
     background-size: 0% 100%;
-} */
+}
 
 
 
 .loader {
     z-index: 20;
     position: fixed;
-    /* display: none; */
+    display: none;
 }
