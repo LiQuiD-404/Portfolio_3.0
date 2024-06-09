@@ -1177,5 +1177,5 @@ html.has-scroll-smooth {
 .loader {
     z-index: 20;
     position: fixed;
-    display: none;
+    /* display: none; */
 }
